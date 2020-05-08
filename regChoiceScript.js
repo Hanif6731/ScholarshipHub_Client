@@ -1,5 +1,5 @@
 $(document).ready(function () {
     $("#regUni").click(function () {
-        location.href = "/university/registration.html";
+        location.href = "./university/registration.html";
     });
 });

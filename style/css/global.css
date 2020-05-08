@@ -9,14 +9,7 @@ hr.hr-color {
     border:1px solid green;
 }
 
-.form-container-header {
-    position: absolute;
-    top: 15vh;
-    background: #229954;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px #000;
-}
+
 
 .form-container{
     position:absolute;
@@ -26,4 +19,25 @@ hr.hr-color {
     border-radius:10px;
     box-shadow:0px 0px 10px 0px #000;
 
+}
+.table-container {
+    position: absolute;
+    top: 15vh;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+    
+}
+.borderless td,.borderless th{
+    
+    border-bottom-style:none;
+    border-top-style:none;
+    border-left-style:none;
+    border-right-style:none;
+    
+}
+
+
+.condensed td,.condensed th {
+    padding: 10px;
 }
