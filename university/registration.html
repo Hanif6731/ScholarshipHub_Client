@@ -4,9 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../style/bootstrap/bootstrap-4.4.1.min.css" />
-    <script src="../style/bootstrap/jquery-3.4.1.min.js"></script>
-    <script src="../style/bootstrap/popper-1.16.0.min.js"></script>
-    <script src="../style/bootstrap/bootstrap-4.4.1.min.js"></script>
+    
     <link rel="stylesheet" href="../style/css/global.css" />
     
 </head>
@@ -29,6 +27,7 @@
                                 <td colspan="2" id="uniName">
                                     <label for="name">University Name</label>
                                     <input type="text" class="form-control" id="name" placeholder="Enter Univesity Name" required>
+                                    
                                 </td>
                                 <td colspan="1" id="uniUN">
                                     <label for="uname">Username</label>
@@ -335,7 +334,7 @@
                             <tr>
                                 <td colspan="3" id="uniMission">
                                     <label for="mission">Mission</label>
-                                    <textarea class="form-control" id="mision" placeholder="Describe mission" required></textarea>
+                                    <textarea class="form-control" id="mission" placeholder="Describe mission" required></textarea>
                                 </td>
                             </tr>
                             <tr>
@@ -355,13 +354,12 @@
                                     <div class="custom-control">
                                         <input type="file" accept=".doc,.docx,.pdf" class="custom-file-input" id="approvalFile">
                                         <label class="custom-file-label" for="approvalFile">Choose Approval Document</label>
-
                                     </div>
                                 </td>
                             </tr>
 
                             <tr>
-                                <td colspan="3">
+                                <td colspan="3" id="termCheck">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="termsBx">
                                         <label class="custom-control-label" for="termsBx">I accept to the <a href="#" class="text-decoration-none">privacy terms and conditions</a></label>
@@ -391,12 +389,16 @@
                         </tbody>
                     </table>
                 </div>
-                
+
 
             </div>
 
         </div>
 
     </div>
+    <script src="../style/bootstrap/jquery-3.4.1.min.js"></script>
+    <script src="../style/bootstrap/popper-1.16.0.min.js"></script>
+    <script src="../style/bootstrap/bootstrap-4.4.1.min.js"></script>
+    <script src="./scripts/regScript.js"></script>
 </body>
 </html>
