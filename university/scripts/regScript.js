@@ -4,6 +4,7 @@ $(document).ready(function () {
         //alert(checkUser());
         //postFIle();
         //alert($("#country").val());
+        //$("#myModal").modal();
         if (isValid()) {
 
             postData();
@@ -118,7 +119,8 @@ $(document).ready(function () {
         isVission(),
         isDesc(),
         isZip(),
-        isFile()
+            isFile(),
+            isChecked()
         ]
         //alert("check user: " + checkUser());
         for (i = 0; i < flags.length; i++) {
