@@ -4,9 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../style/bootstrap/bootstrap-4.4.1.min.css" />
-    
+
+    <script type="text/javascript" src="../style/bootstrap/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../style/bootstrap/popper-1.16.0.min.js"></script>
+    <script type="text/javascript" src="../style/bootstrap/bootstrap-4.4.1.min.js"></script>
     <link rel="stylesheet" href="../style/css/global.css" />
-    
+    <script type="text/javascript" src="./scripts/regScript.js"></script>
+
 </head>
 <body class="bg">
     <div class="container-fluid">
@@ -19,49 +23,72 @@
                                 <td colspan="3">
                                     <h2 class="text-center">Scholaship Hub</h2>
                                     <hr class="hr-color" />
+                                    <div id="">
+
+                                    </div>
                                 </td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td colspan="2" id="uniName">
+                                <td colspan="2" id="">
                                     <label for="name">University Name</label>
                                     <input type="text" class="form-control" id="name" placeholder="Enter Univesity Name" required>
-                                    
+                                    <div id="uniName">
+
+                                    </div>
                                 </td>
-                                <td colspan="1" id="uniUN">
+                                <td colspan="1" id="">
                                     <label for="uname">Username</label>
                                     <input type="text" class="form-control" id="uname" placeholder="Enter Username" required>
+                                    <div id="uniUN">
+
+                                    </div>
                                 </td>
                             </tr>
 
                             <tr>
-                                <td colspan="1" width="33.3%" id="uniPass">
+                                <td colspan="1" width="33.3%" id="">
                                     <label for="pass">Password</label>
                                     <input type="password" class="form-control" id="pass" placeholder="Password" required>
+                                    <div id="uniPass">
+
+                                    </div>
                                 </td>
-                                <td colspan="1" width="33.4%" id="uniConPass">
+                                <td colspan="1" width="33.4%" id="">
                                     <label for="con_pass">Confirm Password</label>
                                     <input type="password" class="form-control" id="con_pass" placeholder="Confirm Password" required>
+                                    <div id="uniConPass">
+
+                                    </div>
                                 </td>
-                                <td colspan="1" width="33.3%" id="uniContact">
+                                <td colspan="1" width="33.3%" id="">
                                     <label for="contact">Contact</label>
                                     <input type="tel" class="form-control" id="contact" placeholder="Enter contact number" required>
+                                    <div id="uniContact">
+
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" id="uniAddress">
+                                <td colspan="2" id="">
                                     <label for="addressline">Addressline</label>
                                     <input type="text" class="form-control" id="addressline" placeholder="Enter addressline" required>
+                                    <div id="uniAddress">
+
+                                    </div>
                                 </td>
-                                <td colspan="1" id="uniEmail">
+                                <td colspan="1" id="">
                                     <label for="email">Email</label>
                                     <input type="email" class="form-control" id="email" placeholder="Enter email address" required>
+                                    <div id="uniEmail">
+
+                                    </div>
                                 </td>
 
                             </tr>
                             <tr>
-                                <td colspan="1" id="uniCountry">
+                                <td colspan="1" id="">
                                     <label for="country">Country</label>
                                     <select id="country" class="custom-select">
                                         <option>Select Country</option>
@@ -315,54 +342,81 @@
                                         <option value="ZM">Zambia</option>
                                         <option value="ZW">Zimbabwe</option>
                                     </select>
+                                    <div id="uniCountry">
+
+                                    </div>
                                 </td>
-                                <td colspan="1" id="uniCity">
+                                <td colspan="1" id="">
                                     <label for="city">City</label>
                                     <input type="text" class="form-control" id="city" placeholder="Enter city name" required>
+                                    <div id="uniCity">
+
+                                    </div>
                                 </td>
-                                <td colspan="1" id="uniZip">
+                                <td colspan="1" id="">
                                     <label for="zip">Zip</label>
                                     <input type="text" class="form-control" id="zip" placeholder="Enter zip code" required>
+                                    <div id="uniZip">
+
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3" id="uniMotto">
+                                <td colspan="3" id="">
                                     <label for="motto">Impressum</label>
                                     <input type="text" class="form-control" id="motto" placeholder="Enter Impressum" required>
+                                    <div id="uniMotto">
+
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3" id="uniMission">
+                                <td colspan="3" id="">
                                     <label for="mission">Mission</label>
                                     <textarea class="form-control" id="mission" placeholder="Describe mission" required></textarea>
+                                    <div id="uniMission">
+
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3" id="uniVision">
+                                <td colspan="3" id="">
                                     <label for="vision">Vision</label>
                                     <textarea type="text" class="form-control" id="vision" placeholder="Describe vision" required></textarea>
+                                    <div id="uniVision">
+
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3" id="uniDesc">
+                                <td colspan="3" id="">
                                     <label for="desc">Description</label>
                                     <textarea type="text" class="form-control" id="desc" placeholder="Enter Description" required></textarea>
+                                    <div id="uniDesc">
+
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3" id="uniFile">
+                                <td colspan="3" id="">
                                     <div class="custom-control">
                                         <input type="file" accept=".doc,.docx,.pdf" class="custom-file-input" id="approvalFile">
                                         <label class="custom-file-label" for="approvalFile">Choose Approval Document</label>
+                                    </div>
+                                    <div id="uniFile">
+
                                     </div>
                                 </td>
                             </tr>
 
                             <tr>
-                                <td colspan="3" id="termCheck">
+                                <td colspan="3">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="termsBx">
                                         <label class="custom-control-label" for="termsBx">I accept to the <a href="#" class="text-decoration-none">privacy terms and conditions</a></label>
+                                    </div>
+                                    <div id="termCheck">
+
                                     </div>
                                 </td>
                             </tr>
@@ -381,6 +435,8 @@
                             </tr>
                             <tr>
                                 <td colspan="3">
+                                    <input type="hidden" id="checkUser" />
+                                    <input type="hidden" id="postData" />
                                 </td>
                             </tr>
 
@@ -394,11 +450,32 @@
             </div>
 
         </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:35px 50px;">
+
+                        <h4><span class="glyphicon glyphicon-ok text-center"></span> Success!!</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body text-center" style="padding:40px 50px;">
+                        <h3>Your registration is succesfully completed.</h3>
+                        <h4>You can now login in to your account.</h4>
+                        <h4>Login to your account <a href="../index.html">here</a></h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                        
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
     </div>
-    <script src="../style/bootstrap/jquery-3.4.1.min.js"></script>
-    <script src="../style/bootstrap/popper-1.16.0.min.js"></script>
-    <script src="../style/bootstrap/bootstrap-4.4.1.min.js"></script>
-    <script src="./scripts/regScript.js"></script>
+    
 </body>
 </html>
