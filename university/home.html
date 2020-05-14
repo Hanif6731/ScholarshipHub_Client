@@ -1,21 +1,123 @@
-<html>
+﻿<html>
 <head>
+    <title>Scholarship Hub</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../style/bootstrap/bootstrap-4.4.1.min.css" />
 
+    <link rel="stylesheet" href="./scripts/style.css" />
+    <link rel="stylesheet" href="../style/css/global.css" />
 </head>
 <body>
-    <header>
-        <div>
 
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-12 jutify-content-center text-center">
+                    <h1>WELCOME TO SCHOLARSHIP HUB!!!</h1>
+                    <h2 id="uniName"></h2>
+                    <h5 id="uniMotto"></h5>
+                </div>
+
+            </div>
         </div>
     </header>
-    <div class="container">
-        <div>
-            <div>
-                <div>
-                    <h1>hi, loggd in successfully</h1>
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="d-flex flex-grow-1">
+            <span class="w-100 d-lg-none d-block"></span>
+            <a class="navbar-brand" href="home.html">
+                Scholarship Hub | Home
+            </a>
+            <div class="w-100 text-right">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Offer Management</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Application Management</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Messenger</a>
+                </li>
+                <li class="nav-item">
+                    <a href="update.html" class="nav-link">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top:30px">
+        <div class="row">
+            <div class="col-sm-4">
+                <div id="uniDesc">
+
                 </div>
+                <h3>Approval Document</h3>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active text-center" href="#" id="uniApproval" download></a>
+                    </li>
+                </ul>
+                <hr class="d-sm-none">
+            </div>
+            <div class="col-sm-8">
+                <h2>Vision</h2>
+                <p id="uniVision"></p>
+                <h2>Missoin</h2>
+                <p id="uniMission"></p>
             </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+
+                        <li><a href="#">Offer Management</a></li>
+                        <li><a href="#">Applications</a></li>
+                        <li><a href="update.html">Settings</a></li>
+                        <li><a href="#">Messenger</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Address</h5>
+                    <address class="address" id="uniAddress">
+
+                    </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center" id="contact">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script type="text/javascript" src="../style/bootstrap/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../style/bootstrap/popper-1.16.0.min.js"></script>
+    <script type="text/javascript" src="../style/bootstrap/bootstrap-4.4.1.min.js"></script>
+    <script type="text/javascript" src="../style/scripts/cookieScript.js"></script>
+    <script type="text/javascript" src="../style/scripts/libScript.js"></script>
+    <script type="text/javascript" src="scripts/homeScript.js"></script>
 </body>
 </html>

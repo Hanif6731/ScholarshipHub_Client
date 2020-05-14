@@ -23,13 +23,21 @@ $(document).ready(function () {
 
                 if (xmlHttp.status == 200) {
                     // alert("content");
+                   
                     var data = xmlHttp.responseJSON;
-                    setCookie("username", data.username);
-                    setCookie("status", data.status);
-                    setCookie("userId", data.id);
-                    alert(getCookie("username") + "\n" + getCookie("status"));
-                    if (data.status == 2) {
-                        location.href = "./university/home.html";
+                    if (data.password == password) {
+                        setCookie("username", data.username);
+                        setCookie("status", data.status);
+                        setCookie("userId", data.id);
+                        setCookie("password", data.password);
+
+                        if (data.status == 2) {
+                            location.href = "./university/home.html";
+                        }
+                    }
+                    else {
+                        $("#" + msgid + " .close").alert("close");
+                        $(id).html($(id).html() + "<div id=\"" + msgid + "\" class=\"alert alert-danger alert-dismissible\"><a href = \"#\" class= \"close\" data-dismiss=\"alert\" aria-label=\"close\" >&times;</a >Invalid Credentials</div>");
                     }
                 }   
                 else {
@@ -45,33 +53,7 @@ $(document).ready(function () {
         });
     }
 
-    function setCookie(cname, cvalue) {
-       document.cookie = cname + "=" + cvalue;
-    }
-
-    function setCookie(cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires=" + d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires;
-    }
-
-
-    function getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
-
+    
 
 
 
