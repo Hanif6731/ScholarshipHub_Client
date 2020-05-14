@@ -40,10 +40,16 @@ hr.hr-color {
     border-radius: 0 !important;
     box-shadow: 0px 0px 10px 0px #76448A;
 }
+
+.shadow {
+    box-shadow: 0px 0px 10px 0px #76448A;
+}
+.size50{
+    width:50%
+}
 .custom-table-container {
     position: center;
     top: 50px;
-    background: #fff;
     border-radius: 0 !important;
     box-shadow: 0px 0px 10px 0px #76448A;
 }
@@ -62,4 +68,22 @@ hr.hr-color {
     padding-right: 20px;
     padding-top:5px;
     padding-bottom:5px;
+}
+
+.sidenav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top:50px;
+    width:300px;
+
+}
+
+
+.main {
+    margin-left: 250px;  
+    
 }

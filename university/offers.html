@@ -1,0 +1,213 @@
+﻿<html>
+<head>
+    <title>Scholarship Hub</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../style/bootstrap/bootstrap-4.4.1.min.css" />
+    <script type="text/javascript" src="../style/bootstrap/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../style/bootstrap/popper-1.16.0.min.js"></script>
+    <script type="text/javascript" src="../style/bootstrap/bootstrap-4.4.1.min.js"></script>
+    <link rel="stylesheet" href="../style/css/global.css" />
+    <script type="text/javascript" src="../style/scripts/cookieScript.js"></script>
+    <script type="text/javascript" src="./scripts/offerScript.js"></script>
+
+</head>
+<body class="bg">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark">
+        <div class="d-flex flex-grow-1">
+            <span class="w-100 d-lg-none d-block"></span>
+            <a class="navbar-brand" href="home.html">
+                Scholarship Hub | Offer Management
+            </a>
+            <div class="w-100 text-right">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+                <li class="nav-item">
+                    <a href="offers.html" class="nav-link">Offer Management</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Application Management</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Messenger</a>
+                </li>
+                <li class="nav-item">
+                    <a href="update.html" class="nav-link">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="cotainer-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-3">
+                <div class="sidenav">
+                    <div class="pl-5">
+                        <div class="m-3">
+                            <div class="shadow">
+                                <button type="submit" id="create" class="btn btn-block btn-success">Offer Scholarship</button>
+
+                            </div>
+                        </div>
+                        <div class="m-3">
+                            <div class="shadow">
+
+                                <button type="submit" id="viewAll" class="btn btn-block btn-success">All Offers</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-7 justify-content-center">
+                <div id="createSection">
+                    <div class="table-responsive-sm">
+                        <table class="table table-sm borderless condensed custom-table-container mt-3">
+                            <thead>
+                                <tr>
+                                    <td colspan="1">
+                                        <h2 class="text-center">Create a new offer</h2>
+                                        <hr class="hr-color" />
+                                        <div id="">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="1" id="">
+                                        <label for="title">Title</label>
+                                        <input type="text" class="form-control" id="title" placeholder="Enter scholarship title" required>
+                                        <div id="offerTitle">
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="1" id="">
+                                        <label for="degree">Country</label>
+                                        <select id="degree" class="custom-select">
+                                            <option>Select Degree</option>
+                                            <option value="PhD">PhD</option>
+                                            <option value="MSc">MSc</option>
+                                            <option value="BSc">BSc</option>
+                                        </select>
+                                        <div id="offerDegree">
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td colspan="1" id="">
+                                        <label for="desc">Description</label>
+                                        <textarea class="form-control" id="desc" placeholder="Describe Offer" required></textarea>
+                                        <div id="offerDesc">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" id="">
+                                        <label for="req">Requirements</label>
+                                        <textarea type="text" class="form-control" id="req" placeholder="Describe Specifications" required></textarea>
+                                        <div id="offerReq">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td colspan="1" id="">
+                                        <label for="deadline">Deadline</label>
+                                        <input type="date" class="form-control" id="deadline" placeholder="Enter Deadline" required />
+                                        <div id="offerDeadline">
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td colspan="1" class="text-center">
+                                        <button id="submit" class="btn btn-success pl-5 pr-5">Save</button>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td colspan="1">
+                                    </td>
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="allOfferSection">
+                    <div class="table-responsive-sm">
+                        <table class="table table-sm table-bordered custom-table-container mt-3 ">
+                            <thead>
+                                <tr>
+                                    <td colspan="4">
+                                        <h2 class="text-center">All offers</h2>
+                                        <hr class="hr-color" />
+                                        <div id="">
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th width="5%">
+                                        <h2 class="text-center">ID</h2>
+                                        
+                                    </th>
+                                    <th width="50%">
+                                        <h2 class="text-center">Title</h2>
+                                        
+                                    </th>
+                                    <th width="15%">
+                                        <h2 class="text-center">Deadline</h2>
+                                        
+                                    </th>
+                                    <th width="30%">
+                                        <h2 class="text-center">Action</h2>
+                                        
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="offers" class="text-center">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-sm-3">
+
+            </div>
+        
+        </div>
+    </div>
+    
+                    
+
+</body>
+</html>

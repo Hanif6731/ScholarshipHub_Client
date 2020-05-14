@@ -1,6 +1,6 @@
 $(document).ready(function () {
     loadData();
-
+    
     $("#submit").click(function () {
         
         if (isValid()) {
