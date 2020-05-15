@@ -30,9 +30,7 @@
                 <li class="nav-item">
                     <a href="offers.html" class="nav-link">Offer Management</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Application Management</a>
-                </li>
+               
                 <li class="nav-item">
                     <a href="#" class="nav-link">Messenger</a>
                 </li>
@@ -40,11 +38,12 @@
                     <a href="update.html" class="nav-link">Settings</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Logout</a>
+                    <a href="../logout.html" class="nav-link">Logout</a>
                 </li>
             </ul>
         </div>
     </nav>
+    
 
     <div class="cotainer-fluid">
         <div class="row">
@@ -128,7 +127,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                
+
                                 <tr>
                                     <td colspan="1" id="">
                                         <label for="deadline">Deadline</label>
@@ -142,7 +141,7 @@
                                 <tr>
 
                                     <td colspan="1" class="text-center">
-                                        <button id="submit" class="btn btn-success pl-5 pr-5">Save</button>
+                                        <button id="submit" class="btn btn-success pl-5 pr-5">Submit</button>
                                     </td>
 
                                 </tr>
@@ -164,6 +163,7 @@
                             <thead>
                                 <tr>
                                     <td colspan="4">
+
                                         <h2 class="text-center">All offers</h2>
                                         <hr class="hr-color" />
                                         <div id="">
@@ -174,34 +174,205 @@
                                 <tr>
                                     <th width="5%">
                                         <h2 class="text-center">ID</h2>
-                                        
+
                                     </th>
                                     <th width="50%">
                                         <h2 class="text-center">Title</h2>
-                                        
+
                                     </th>
                                     <th width="15%">
                                         <h2 class="text-center">Deadline</h2>
-                                        
+
                                     </th>
                                     <th width="30%">
                                         <h2 class="text-center">Action</h2>
-                                        
+
                                     </th>
+
 
                                 </tr>
                             </thead>
                             <tbody id="offers" class="text-center">
-                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="updateSection">
+                    <div class="table-responsive-sm">
+                        <table class="table table-sm borderless condensed custom-table-container mt-3">
+                            <thead>
+                                <tr>
+                                    <td colspan="1">
+
+                                        <h2 class="text-center">Update offer</h2>
+                                        <hr class="hr-color" />
+                                        <div id="">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="1" id="">
+                                        <label for="edID">ID</label>
+                                        <input type="text" class="form-control disabled" id="edID" placeholder="ID" disabled required>
+                                        <div id="edofferTitle">
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="1" id="">
+                                        <label for="edtitle">Title</label>
+                                        <input type="text" class="form-control" id="edtitle" placeholder="Enter scholarship title" required>
+                                        <div id="edofferTitle">
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="1" id="">
+                                        <label for="eddegree">Country</label>
+                                        <select id="eddegree" class="custom-select">
+                                            <option>Select Degree</option>
+                                            <option value="PhD">PhD</option>
+                                            <option value="MSc">MSc</option>
+                                            <option value="BSc">BSc</option>
+                                        </select>
+                                        <div id="edofferDegree">
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td colspan="1" id="">
+                                        <label for="eddesc">Description</label>
+                                        <textarea class="form-control" id="eddesc" placeholder="Describe Offer" required></textarea>
+                                        <div id="edofferDesc">
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="1" id="">
+                                        <label for="edreq">Requirements</label>
+                                        <textarea type="text" class="form-control" id="edreq" placeholder="Describe Specifications" required></textarea>
+                                        <div id="edofferReq">
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="1" id="">
+                                        <label for="eddeadline">Deadline</label>
+                                        <input type="date" class="form-control" id="eddeadline" placeholder="Enter Deadline" required />
+                                        <div id="edofferDeadline">
+
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td colspan="1" class="text-center">
+                                        <button id="saveEdit" class="btn btn-success pl-5 pr-5">Save</button>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td colspan="1">
+                                    </td>
+                                </tr>
+
+
+
                             </tbody>
                         </table>
                     </div>
                 </div>
 
 
+                <div class="modal fade" id="detailsModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header" style="padding:35px 50px;">
+
+                                <h4><span class="glyphicon glyphicon-saved text-center"></span> Offer Details</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body" style="padding:40px 50px;">
+                                <h5><label for="oId">ID</label></h5>
+                                <p id="oId"></p>
+                                <h5><label for="oTitle">Title</label></h5>
+                                <p id="oTitle"></p>
+                                <h5><label for="oDegree">Degree</label></h5>
+                                <p id="oDegree"></p>
+                                <h5><label for="oDesc">Description</label></h5>
+                                <p id="oDesc"></p>
+                                <h5><label for="oReq">Rquirements</label></h5>
+                                <p id="oReq"></p>
+                                <h5><label for="oDeadline">Deadline</label></h5>
+                                <p id="oDeadline"></p>
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                                <button type="submit" id="applications" class="btn btn-primary mr-auto ml-auto">Manage Applictions in this offer</button>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal fade" id="deleteModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header" style="padding:35px 50px;">
+
+                                <h4><span class="glyphicon glyphicon-saved text-center"></span> Are you sure to delete this offer?</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body" style="padding:40px 50px;">
+                                <h5><label for="dId">ID</label></h5>
+                                <p id="dId"></p>
+                                <h5><label for="dTitle">Title</label></h5>
+                                <p id="dTitle"></p>
+                                <h5><label for="dDegree">Degree</label></h5>
+                                <p id="dDegree"></p>
+                                <h5><label for="dDesc">Description</label></h5>
+                                <p id="dDesc"></p>
+                                <h5><label for="dReq">Rquirements</label></h5>
+                                <p id="dReq"></p>
+                                <h5><label for="dDeadline">Deadline</label></h5>
+                                <p id="dDeadline"></p>
+                            </div>
+                            <div class="modal-footer justify-content-center pl-3 pr-3">
+                                <button type="submit" id="confirm" class="btn btn-Danger ml-auto">Confirm</button>
+                                <button type="button" class="btn btn-success mr-auto" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
             </div>
             <div class="col-sm-3">
-
+                
             </div>
         
         </div>

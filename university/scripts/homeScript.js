@@ -1,5 +1,13 @@
 $(document).ready(function () {
+    var un = getCookie("username");
+    var pw = getCookie("password");
+    //alert(un);
+    if (un == "" || pw == "") {
+        location.href = "../index.html";
+    }
+    
     loadData();
+    
 
     function loadData() {
         var username = getCookie("username");
