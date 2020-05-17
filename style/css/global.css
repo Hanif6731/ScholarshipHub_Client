@@ -9,7 +9,7 @@ hr.hr-color {
     border:1px solid green;
 }
 
-.modal-header,.modal h4, .modal .close {
+.modal-header,.modal h4, .modal .close-control {
     background-color: #5cb85c;
     color: white !important;
     text-align: center;

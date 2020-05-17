@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     });
     $("#send").click(function () {
-        postData();
+        if (isValid()) { postData() };
         //$("#composeModal").modal("show");
     });
     $("#compose").click(function () {
@@ -42,6 +42,24 @@ $(document).ready(function () {
     $("#sent").click(function () {
         loadSentData();
     });
+
+    function isValid() {
+        var flags = [
+            isNotEmpty($("#sub").val(),"#errSub", "msgSub"),
+            isNotEmpty($("#emailBody").val(),"#errBody", "msgBody"),
+            isEmail()
+        ]
+        //alert("check user: " + checkUser());
+        for (i = 0; i < flags.length; i++) {
+            if (flags[i] == false) {
+                //alert(i);
+                return false;
+            }
+        }
+        return true;
+
+
+    }
 
     function loadData() {
         $.ajax({
@@ -209,5 +227,38 @@ $(document).ready(function () {
                 }
             }
         });
+    }
+
+    function isEmail() {
+        var id = "#errToUser";
+        var msgid = "msgEmail";
+        var Value = $("#toUser").val();
+        var RegEx = "^[a-zA-Z0-9]+([\.-]?[a-zA-Z0-9]+)*@[a-zA-Z0-9]+([\.-]?[a-zA-Z0-9]+)*(\.[a-zA-Z0-9]{2,})+$";
+
+        if (isNotEmpty(Value, id, msgid)) {
+            var flag = matchString(RegEx, Value);
+            if (!flag) {
+
+                $(id).html($(id).html() + "<div id=\"" + msgid + "\" class=\"alert alert-danger alert-dismissible\"><a href = \"#\" class= \"close\" data-dismiss=\"alert\" aria-label=\"close\" >&times;</a >Invalid Email adderess</br><strong>Example: </strong>user@company.com</div>");
+                return false;
+            }
+            else {
+                return true;
+
+            }
+        }
+        return false;
+    }
+
+    function isNotEmpty(str, id, msgid) {
+        $("#" + msgid + " .close").alert("close");
+        if (str.length == 0) {
+            $(id).html($(id).html() + "<div id=\"" + msgid + "\" class=\"alert alert-danger alert-dismissible\"><a href = \"#\" class= \"close\" data-dismiss=\"alert\" aria-label=\"close\" >&times;</a >Fillout this field.</div>");
+            return false;
+        }
+        else {
+
+        }
+        return true;
     }
 });

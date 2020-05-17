@@ -19,6 +19,8 @@ $(document).ready(function () {
     $(document).on("click",".edit",function () {
        var id=$(this).val();
         loadOffer(id);
+        $("#saveEdit").removeAttr("disabled");
+        $("#saveEdit").removeClass("disabled");
         $('html, body').animate({
             scrollTop: $("#updateSection").offset().top
         }, 1000);
@@ -47,11 +49,55 @@ $(document).ready(function () {
     });
 
     $("#submit").click(function () {
-        postData();
+        if (isValid()) {
+            postData();
+        }
     });
     $("#saveEdit").click(function () {
-        putData();
+        if (isValid2()) {
+            putData();
+        }
     });
+
+    function isValid() {
+        var flags = [
+            isField("#offerTitle", "msgTitle", $("#title").val()),
+            isField("#offerDesc", "msgDesc", $("#desc").val()),
+            isField("#offerReq", "msgReq", $("#req").val()),
+            isDate($("#deadline").val(), "#offerDeadline", "msgDeadline"),
+            isSelected($("#degree").val(), "#offerDegree", "msgDegree")
+        ]
+        //alert("check user: " + checkUser());
+        for (i = 0; i < flags.length; i++) {
+            if (flags[i] == false) {
+                //alert(i);
+                return false;
+            }
+        }
+        return true;
+
+
+    }
+
+    function isValid2() {
+        var flags = [
+            isField("#edofferTitle", "msgedTitle", $("#edtitle").val()),
+            isField("#edofferDesc", "msgedDesc", $("#eddesc").val()),
+            isField("#edofferReq", "msgedReq", $("#edreq").val()),
+            isDate($("#eddeadline").val(), "#edofferDeadline", "msgedDeadline"),
+            isSelected($("#eddegree").val(), "#edofferDegree", "msgedDegree")
+        ]
+        //alert("check user: " + checkUser());
+        for (i = 0; i < flags.length; i++) {
+            if (flags[i] == false) {
+                //alert(i);
+                return false;
+            }
+        }
+        return true;
+
+
+    }
 
     function viewAll() {
         loadData();
@@ -277,5 +323,52 @@ $(document).ready(function () {
             }
 
         });
+    }
+
+    function isSelected(str, id, msgid) {
+        $("#" + msgid + " .close").alert("close");
+        if (str =="Select Degree") {
+            $(id).html($(id).html() + "<div id=\"" + msgid + "\" class=\"alert alert-danger alert-dismissible\"><a href = \"#\" class= \"close\" data-dismiss=\"alert\" aria-label=\"close\" >&times;</a >Select this field.</div>");
+            return false;
+        }
+        else {
+
+        }
+        return true;
+    }
+
+    function isEmpty(str, id, msgid) {
+        $("#" + msgid + " .close").alert("close");
+        if (str.length == 0) {
+            $(id).html($(id).html() + "<div id=\"" + msgid + "\" class=\"alert alert-danger alert-dismissible\"><a href = \"#\" class= \"close\" data-dismiss=\"alert\" aria-label=\"close\" >&times;</a >Fillout this field.</div>");
+            return true;
+        }
+        else {
+
+        }
+        return false;
+    }
+
+    function isDate(str, id, msgid) {
+        var d = new Date();
+        var strDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+        str = new Date(str);
+        strDate = new Date(strDate);
+        //alert(str);
+        //alert(strDate + " " + str);
+        $("#" + msgid + " .close").alert("close");
+        if (str <= strDate || str =="Invalid Date") {
+            $(id).html($(id).html() + "<div id=\"" + msgid + "\" class=\"alert alert-danger alert-dismissible\"><a href = \"#\" class= \"close\" data-dismiss=\"alert\" aria-label=\"close\" >&times;</a >Date should be Greater than current date.</div>");
+            return false;
+        }
+        else {
+
+        }
+        return true;
+    }
+
+    function isField(id,msgid,Value,) {
+        
+        return !isEmpty(Value, id, msgid);
     }
 });

@@ -135,7 +135,7 @@
                             <div class="modal-header" style="padding:35px 50px;">
 
                                 <h4><span class="glyphicon glyphicon-saved text-center"></span>Email Details</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button type="button" class="close close-control" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body p-3">
                                 <div class="d-inline-block" id="time"></div><br />
@@ -164,15 +164,17 @@
                             <div class="modal-header" style="padding:35px 50px;">
 
                                 <h4><span class="glyphicon glyphicon-saved text-center"></span>Compose Email</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button type="button" class="close close-control" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body p-3">
                                 <label for="toUser">To</label>
                                 <input type="email" class="form-control" placeholder="Enter receiver email address" id="toUser" />
+                                <div id="errToUser"></div>
                                 <label for="sub">Subject</label>
                                 <input type="text" id="sub" class="form-control" placeholder="Enter subject" />
+                                <div id="errSub"></div>
                                 <textarea id="emailBody" class="form-control p-3 mt-3" placeholder="Enter messege"></textarea>
-                                
+                                <div id="errBody"></div>
                             </div>
                             <div class="modal-footer justify-content-center pl-3 pr-3">
                                 <button type="submit" id="send" class="btn btn-primary ml-auto">Send</button>
