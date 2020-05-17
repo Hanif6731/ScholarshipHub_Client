@@ -35,6 +35,7 @@ $(document).ready(function () {
                     $("#uniAddress").html(uniAddress);
                     var contact = "Phone: " + data.contact + "<br/>Email: " + data.email;
                     $("#contact").html(contact);
+                    setCookie("email", data.email);
                 }
                 else {
                     alert(xmlHttp.status);

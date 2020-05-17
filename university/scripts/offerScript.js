@@ -7,6 +7,11 @@ $(document).ready(function () {
     }
     viewAll();
 
+    $("#applications").click(function () {
+        setCookie("offerId", $("#oId").html());
+        location.href = "application.html";
+    });
+
     $("#confirm").click(function () {
         deleteData();
     });
@@ -80,7 +85,7 @@ $(document).ready(function () {
                     viewAll();
                 }
                 else {
-                    alert(xmlHttp.status + "\n" + xmlHttp.responseJSON);
+                    alert(xmlHttp.status + "\n" + xmlHttp.responseText);
                 }
             }
 

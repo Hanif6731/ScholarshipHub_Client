@@ -1,0 +1,192 @@
+﻿<html>
+<head>
+    <title>Scholarship Hub</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../style/bootstrap/bootstrap-4.4.1.min.css" />
+    <script type="text/javascript" src="../style/bootstrap/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../style/bootstrap/popper-1.16.0.min.js"></script>
+    <script type="text/javascript" src="../style/bootstrap/bootstrap-4.4.1.min.js"></script>
+    <link rel="stylesheet" href="../style/css/global.css" />
+    <script type="text/javascript" src="../style/scripts/cookieScript.js"></script>
+    <script type="text/javascript" src="./scripts/applicantScript.js"></script>
+
+</head>
+<body class="bg">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark">
+        <div class="d-flex flex-grow-1">
+            <span class="w-100 d-lg-none d-block"></span>
+            <a class="navbar-brand" href="home.html">
+                Scholarship Hub | Application Management
+            </a>
+            <div class="w-100 text-right">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+                <li class="nav-item">
+                    <a href="offers.html" class="nav-link">Offer Management</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Messenger</a>
+                </li>
+                <li class="nav-item">
+                    <a href="update.html" class="nav-link">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../logout.html" class="nav-link">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="cotainer-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                
+            </div>
+
+            <div class="col-12 col-sm-6 justify-content-center">
+
+                <div id="allAppSection">
+                    <div class="table-responsive-sm">
+                        <table class="table table-sm table-bordered custom-table-container mt-3 ">
+                            <thead>
+                                <tr>
+                                    <td colspan="4">
+
+                                        <h2 class="text-center">All Applications</h2>
+                                        <hr class="hr-color" />
+                                        <div id="">
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <h2 class="text-center">Student Name</h2>
+
+                                    </th>
+                                    <th>
+                                        <h2 class="text-center">Application Status</h2>
+
+                                    </th>
+                                    <th>
+                                        <h2 class="text-center">Action</h2>
+
+                                    </th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody id="applications" class="text-center">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class="modal fade" id="detailsModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header" style="padding:35px 50px;">
+
+                                <h4><span class="glyphicon glyphicon-saved text-center"></span> Offer Details</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body" style="padding:40px 50px;">
+                                <h5><label for="appId">Application ID</label></h5>
+                                <p id="appId"></p>
+                                <h5><label for="oTitle">Offer Title</label></h5>
+                                <p id="oTitle"></p>
+                                <h5><label for="sName">Student name</label></h5>
+                                <p id="sName"></p>
+                                <a id="cv" class="text-decoration-none" href="#" target="_blank">View CV</a>
+                                <h5><label for="motive">Motivation</label></h5>
+                                <p id="motive"></p>
+                                <h5><label for="bio">Student Bio</label></h5>
+                                <p id="bio"></p>
+                                <h5><label for="status">Application status</label></h5>
+                                <p id="status"></p>
+                                <h5><label for="info">Additional Information/Instruction</label></h5>
+                                <p id="info"></p>
+                                <input type="hidden" id="studentId" value="" />
+                                <input type="hidden" id="appStatus" value="" />
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                                <button type="submit" id="addInfo" class="btn btn-primary ml-auto">Give additional Instruction</button>
+                                <button type="submit" id="accept" class="btn btn-success">Accept</button>
+                                <button type="submit" id="reject" class="btn btn-Danger mr-auto">Reject</button>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal fade" id="confirmModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header" style="padding:35px 50px;">
+
+                                <h4><span class="glyphicon glyphicon-saved text-center"></span> Are you sure to reject this Application?</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-footer justify-content-center pl-3 pr-3">
+                                <button type="submit" id="confirm" class="btn btn-Danger ml-auto">Confirm</button>
+                                <button type="button" class="btn btn-success mr-auto" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal fade" id="instructionsModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header" style="padding:35px 50px;">
+
+                                <h4><span class="glyphicon glyphicon-saved text-center"></span>Give instructions</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body" style="padding:40px 50px;">
+                                <label for="instructions">Instructions</label>
+                                <textarea type="text" class="form-control pl-3" id="instructions" placeholder="Enter Instructions"></textarea>
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                                <button type="submit" id="addIns" class="btn btn-primary ml-auto mr-auto">Submit</button>
+                                
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-3">
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>
