@@ -261,4 +261,12 @@ $(document).ready(function () {
         }
         return true;
     }
+
+    function matchString(regX, str) {
+        var regex = new RegExp(regX);
+        if (regex.test(str)) {
+            return true;
+        }
+        return false;
+    }
 });

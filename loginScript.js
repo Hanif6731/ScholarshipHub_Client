@@ -34,6 +34,9 @@ $(document).ready(function () {
                         if (data.status == 2) {
                             location.href = "./university/home.html";
                         }
+                        else if (data.status == 3) {
+                            location.href = "./organization/home.html";
+                        }
                     }
                     else {
                         $("#" + msgid + " .close").alert("close");
